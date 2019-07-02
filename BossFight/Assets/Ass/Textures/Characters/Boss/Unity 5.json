@@ -1,0 +1,82 @@
+{
+    "format": {
+        "version": "1.0"
+    },
+    "shaders": {
+        "Main shader": {
+            "parameters": {
+                "Common Parameters": {
+                    "ao_intensity": 0.75,
+                    "emissive_intensity": 1,
+                    "horizonFade": 1.2999999523162842,
+                    "nbSamples": 16
+                },
+                "Parallax Occlusion Mapping": {
+                    "maxPOMSamples": 16,
+                    "minPOMSamples": 4,
+                    "pomStrength": 1,
+                    "usePOM": false
+                },
+                "Subsurface Scattering Parameters": {
+                    "sssColor": [
+                        0.7009999752044678,
+                        0.3009999990463257,
+                        0.3050000071525574
+                    ],
+                    "sssEnabled": true,
+                    "sssScale": 0.5,
+                    "sssType": 1
+                }
+            },
+            "shader": "pbr-metal-rough",
+            "shaderInstance": "Main shader"
+        }
+    },
+    "texturesets": {
+        "Breatplate_mat": {
+            "shader": "Main shader"
+        },
+        "Cloth_mat": {
+            "shader": "Main shader"
+        },
+        "Crown_mat": {
+            "shader": "Main shader"
+        },
+        "Gambeson_mat": {
+            "shader": "Main shader"
+        },
+        "Helmet_mat": {
+            "shader": "Main shader"
+        },
+        "InferiorPauldron_mat": {
+            "shader": "Main shader"
+        },
+        "SuperiorPauldron_mar": {
+            "shader": "Main shader"
+        },
+        "Waist_mat": {
+            "shader": "Main shader"
+        },
+        "belt_mat": {
+            "shader": "Main shader"
+        },
+        "breeches_mat": {
+            "shader": "Main shader"
+        },
+        "facemask_mar": {
+            "shader": "Main shader"
+        },
+        "greaves_mat": {
+            "shader": "Main shader"
+        },
+        "skin_mat": {
+            "shader": "Main shader"
+        },
+        "strips_mat": {
+            "shader": "Main shader"
+        },
+        "vambraces_mat": {
+            "shader": "Main shader"
+        }
+    }
+}
