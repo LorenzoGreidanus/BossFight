@@ -13,6 +13,8 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float movementSpeed;
 
     public CamShake camShake;
+    public float shakeLenght;
+    public float magnitude;
 
     public float dashCooldown;
     public float dashStamina;
@@ -22,6 +24,7 @@ public class PlayerMove : MonoBehaviour
     private void Awake()
     {
         charController = GetComponent<CharacterController>();
+        LockState();
     }
 
     private void Update()
@@ -45,7 +48,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (Input.GetButton("Dash") && dashCooldown <= 0 && gameObject.GetComponent<PlayerStats>().stamina != 0 && gameObject.GetComponent<PlayerStats>().staminaPenalty == false)
         {
-            StartCoroutine(camShake.Shake(.14f, .2f));
+            StartCoroutine(camShake.Shake(shakeLenght, magnitude));
 
             dash *= dashSpeed;
             dashCooldown = maxDashCooldown;
@@ -61,5 +64,10 @@ public class PlayerMove : MonoBehaviour
         {
             dash = 1;
         }
+    }
+
+    private void LockState()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }

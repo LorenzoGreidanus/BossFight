@@ -9,11 +9,14 @@ public class PlayerStats : MonoBehaviour
     public float stamina;
     public float staminaDebuff;
 
+    public int attackPower;
+
     public bool staminaPenalty;
     public int staminaMax;
 
     public int healthMax;
     public int healPots;
+    public float healtGain;
 
     public Image healthSlider;
     public Image staminaSlider;
@@ -22,7 +25,7 @@ public class PlayerStats : MonoBehaviour
     {
         staminaPenalty = false;
     }
-
+    
     public void Update()
     {
         if (health <= 0)
@@ -63,7 +66,7 @@ public class PlayerStats : MonoBehaviour
             stamina = staminaMax;
         }
     }
-    
+
     public void Heal()
     {
         if (Input.GetButtonDown("Interact") && healPots < 3)
@@ -77,5 +80,38 @@ public class PlayerStats : MonoBehaviour
                 health = healthMax;
             }
         }
+    }
+
+    public void Knight()
+    {
+        health = 100f;
+        healthMax = 100;
+
+        //attackPower =
+
+        stamina = 100f;
+        staminaMax = 100;
+    }
+
+    public void Beserker()
+    {
+        health = 50f;
+        healthMax = 50;
+
+        //attackPower = 
+
+        stamina = 140f;
+        staminaMax = 140;
+    }
+
+    public void Paladin()
+    {
+        health = 200f;
+        healthMax = 200;
+
+        //attackPower = 
+
+        stamina = 50f;
+        staminaMax = 50;
     }
 }
