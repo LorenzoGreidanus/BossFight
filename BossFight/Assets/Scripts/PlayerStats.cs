@@ -20,6 +20,7 @@ public class PlayerStats : MonoBehaviour
 
     public void Update()
     {
+        Heal();
         if (health <= 0)
         {
             Destroy(this.gameObject);
@@ -49,5 +50,13 @@ public class PlayerStats : MonoBehaviour
     public void StaminaRegen()
     {
         stamina += 10 * Time.deltaTime;
+    }
+    
+    public void Heal()
+    {
+        if (Input.GetButtonDown(""))
+        {
+
+        }
     }
 }
