@@ -44,8 +44,8 @@ public class UIScript : MonoBehaviour
 
     public void Back()
     {
-        FindObjectOfType<AudioManager>().Play("ButtonSound");
         SceneManager.LoadScene(0);
+        FindObjectOfType<AudioManager>().Play("ButtonSound");
     }
 
     public void Continue()
