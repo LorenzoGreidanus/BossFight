@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2158384052984215404
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7813665003877302795}
+  m_Layer: 0
+  m_Name: CameraHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7813665003877302795
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2158384052984215404}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7001187060919899776}
+  m_Father: {fileID: 6770814927745300664}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4409676890940977951
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,6 +43,7 @@ GameObject:
   - component: {fileID: 1414918302260020243}
   - component: {fileID: 2332203704203878772}
   - component: {fileID: 1274131728120428276}
+  - component: {fileID: 4642361812480296853}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -27,10 +59,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4409676890940977951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.8, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6770814927745300664}
+  m_Father: {fileID: 7813665003877302795}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &1414918302260020243
@@ -96,10 +128,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e01bb4a112cb5d143965e879936c4e9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseXInputName: 
-  mouseYInputName: 
-  mouseSensitivity: 0
-  playerBody: {fileID: 0}
+  mouseXInputName: Mouse X
+  mouseYInputName: Mouse Y
+  mouseSensitivity: 150
+  playerBody: {fileID: 6770814927745300664}
+--- !u!114 &4642361812480296853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4409676890940977951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92a80232b15c79043a1c14338590ad91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8163730028418448583
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,7 +174,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7001187060919899776}
+  - {fileID: 7813665003877302795}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -164,15 +208,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db83038ab571d04991f3cfcb46cffd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalInputName: 
-  verticalInputName: 
+  horizontalInputName: Horizontal
+  verticalInputName: Vertical
   dash: 0
-  dashSpeed: 0
-  maxDashCooldown: 0
-  dashStopMultiplier: 0
-  movementSpeed: 0
-  dashCooldown: 0
-  dashStamina: 0
+  dashSpeed: 6
+  maxDashCooldown: 1
+  dashStopMultiplier: 9
+  movementSpeed: 6
+  camShake: {fileID: 4642361812480296853}
+  dashCooldown: 1
+  dashStamina: 20
 --- !u!114 &3275194463979295061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,9 +230,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58be2399be0f1524a8aefaccb13bcc77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  stamina: 0
+  health: 100
+  stamina: 100
+  staminaDebuff: 60
   staminaPenalty: 0
-  staminaDebuff: 0
+  staminaMax: 100
+  healthMax: 100
+  healPots: 0
   healthSlider: {fileID: 0}
   staminaSlider: {fileID: 0}

@@ -12,6 +12,8 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float dashStopMultiplier;
     [SerializeField] private float movementSpeed;
 
+    public CamShake camShake;
+
     public float dashCooldown;
     public float dashStamina;
 
@@ -43,6 +45,8 @@ public class PlayerMove : MonoBehaviour
     {
         if (Input.GetButton("Dash") && dashCooldown <= 0 && gameObject.GetComponent<PlayerStats>().stamina != 0 && gameObject.GetComponent<PlayerStats>().staminaPenalty == false)
         {
+            StartCoroutine(camShake.Shake(.10f, .3f));
+
             dash *= dashSpeed;
             dashCooldown = maxDashCooldown;
             gameObject.GetComponent<PlayerStats>().stamina -= dashStamina;
