@@ -45,7 +45,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (Input.GetButton("Dash") && dashCooldown <= 0 && gameObject.GetComponent<PlayerStats>().stamina != 0 && gameObject.GetComponent<PlayerStats>().staminaPenalty == false)
         {
-            StartCoroutine(camShake.Shake(.10f, .3f));
+            StartCoroutine(camShake.Shake(.14f, .2f));
 
             dash *= dashSpeed;
             dashCooldown = maxDashCooldown;
