@@ -15,15 +15,9 @@ public class PlayerLook : MonoBehaviour
 
     private void Awake()
     {
-        LockCursor();
         xAxisClamp = 0.0f;
         maxRotationUp = 90f;
         maxRotationDown = -90f;
-    }
-
-    private void LockCursor()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()

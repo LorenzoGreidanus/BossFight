@@ -46,8 +46,8 @@ public class PlayerStats : MonoBehaviour
             Heal();
         }
 
-        //healthSlider.fillAmount = health / 100f;
-        //staminaSlider.fillAmount = stamina / 100f;
+        healthSlider.fillAmount = health / 100f;
+        staminaSlider.fillAmount = stamina / 100f;
     }
 
     public void Damage(float damage)
