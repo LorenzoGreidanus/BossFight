@@ -16,7 +16,7 @@ public class PlayerStats : MonoBehaviour
 
     public int healthMax;
     public int healPots;
-    public float healtT;
+    public float healtGain;
 
     public Image healthSlider;
     public Image staminaSlider;
