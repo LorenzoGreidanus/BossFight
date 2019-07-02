@@ -14,6 +14,9 @@ public class Boss : MonoBehaviour
     bool attacking;
     int randomInt;
     bool turnAttacking;
+    public Vector3 walkDirection;
+
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -48,12 +51,12 @@ public class Boss : MonoBehaviour
             }
             else
             {
-                transform.Translate(new Vector3(0, 0, 1) * movementSpeed * Time.deltaTime);
+                transform.Translate(walkDirection * movementSpeed * Time.deltaTime);
             }
         }
         else
         {
-            transform.Translate(new Vector3(0, 0, 1) * movementSpeed * Time.deltaTime);
+            transform.Translate(walkDirection * movementSpeed * Time.deltaTime);
         }
     }
 
