@@ -51,6 +51,8 @@ public class UIScript : MonoBehaviour
     public void Continue()
     {
         panel.SetActive(false);
+        Time.timeScale = unpause;
+        Cursor.lockState = CursorLockMode.Locked;
         FindObjectOfType<AudioManager>().Play("ButtonSound");
     }
 
@@ -60,6 +62,7 @@ public class UIScript : MonoBehaviour
         {
             panel.SetActive(true);
         }
+        Cursor.lockState = CursorLockMode.None;
         Time.timeScale = paused;
         pause = true;
         FindObjectOfType<AudioManager>().Play("ButtonSound");
@@ -71,6 +74,7 @@ public class UIScript : MonoBehaviour
         {
             panel.SetActive(false);
         }
+        Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = unpause;
         pause = false;
         FindObjectOfType<AudioManager>().Play("ButtonSound");
