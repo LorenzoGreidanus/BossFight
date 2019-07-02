@@ -167,8 +167,8 @@ MonoBehaviour:
   sounds:
   - name: ButtonSound
     clip: {fileID: 8300000, guid: b550d6b2f36e8c244af9d4fb003c89ed, type: 3}
-    volume: 0.4
-    pitch: 0
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
 --- !u!1 &62606243
