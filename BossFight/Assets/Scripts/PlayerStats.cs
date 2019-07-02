@@ -7,8 +7,13 @@ public class PlayerStats : MonoBehaviour
 {
     public float health;
     public float stamina;
-    public bool staminaPenalty;
     public float staminaDebuff;
+
+    public bool staminaPenalty;
+    public int staminaMax;
+
+    public int healthMax;
+    public int healPots;
 
     public Image healthSlider;
     public Image staminaSlider;
@@ -20,12 +25,11 @@ public class PlayerStats : MonoBehaviour
 
     public void Update()
     {
-        Heal();
         if (health <= 0)
         {
             Destroy(this.gameObject);
         }
-        if (stamina != 100 && gameObject.GetComponent<PlayerMove>().dashCooldown <= 0)
+        if (stamina != staminaMax && gameObject.GetComponent<PlayerMove>().dashCooldown <= 0)
         {
             StaminaRegen();
         }
@@ -37,9 +41,13 @@ public class PlayerStats : MonoBehaviour
         {
             staminaPenalty = false;
         }
+        if (health < healthMax)
+        {
+            Heal();
+        }
 
-        healthSlider.fillAmount = health / 100f;
-        staminaSlider.fillAmount = stamina / 100f;
+        //healthSlider.fillAmount = health / 100f;
+        //staminaSlider.fillAmount = stamina / 100f;
     }
 
     public void Damage(float damage)
@@ -50,13 +58,24 @@ public class PlayerStats : MonoBehaviour
     public void StaminaRegen()
     {
         stamina += 10 * Time.deltaTime;
+        if (stamina > staminaMax)
+        {
+            stamina = staminaMax;
+        }
     }
     
     public void Heal()
     {
-        if (Input.GetButtonDown(""))
+        if (Input.GetButtonDown("Interact") && healPots < 3)
         {
+            health += 50f;
 
+            healPots++;
+
+            if (health > healthMax)
+            {
+                health = healthMax;
+            }
         }
     }
 }
