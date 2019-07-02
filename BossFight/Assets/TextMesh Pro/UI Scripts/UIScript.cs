@@ -17,7 +17,8 @@ public class UIScript : MonoBehaviour
             if (pause == false)
             {
                 PauseMenu();
-            } else
+            }
+            else
             {
                 UnPaused();
             }
@@ -26,39 +27,52 @@ public class UIScript : MonoBehaviour
     public void Play()
     {
         SceneManager.LoadScene(1);
+        FindObjectOfType<AudioManager>().Play("ButtonSound");
     }
 
     public void Options()
     {
         SceneManager.LoadScene(2);
+        FindObjectOfType<AudioManager>().Play("ButtonSound");
     }
 
     public void Quit()
     {
         Application.Quit();
+        FindObjectOfType<AudioManager>().Play("ButtonSound");
     }
 
-    public void back()
+    public void Back()
     {
+        FindObjectOfType<AudioManager>().Play("ButtonSound");
         SceneManager.LoadScene(0);
     }
 
     public void Continue()
     {
         panel.SetActive(false);
+        FindObjectOfType<AudioManager>().Play("ButtonSound");
     }
 
     public void PauseMenu()
     {
-        panel.SetActive(true);
+        if (panel != null)
+        {
+            panel.SetActive(true);
+        }
         Time.timeScale = paused;
         pause = true;
+        FindObjectOfType<AudioManager>().Play("ButtonSound");
     }
 
     public void UnPaused()
     {
-        panel.SetActive(false);
+        if (panel != null)
+        {
+            panel.SetActive(false);
+        }
         Time.timeScale = unpause;
         pause = false;
+        FindObjectOfType<AudioManager>().Play("ButtonSound");
     }
 }
