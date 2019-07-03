@@ -15,6 +15,7 @@ public class PlayerStats : MonoBehaviour
 
     public bool staminaPenalty;
     public int staminaMax;
+    [SerializeField]private int staminaRegen;
 
     public int healthMax;
     public int healPots;
@@ -64,7 +65,7 @@ public class PlayerStats : MonoBehaviour
 
     public void StaminaRegen()
     {
-        stamina += 10 * Time.deltaTime;
+        stamina += staminaRegen * Time.deltaTime;
         if (stamina > staminaMax)
         {
             stamina = staminaMax;
@@ -91,6 +92,8 @@ public class PlayerStats : MonoBehaviour
         startHealth = 100f;
         healthMax = 100;
 
+        health = startHealth;
+
         //attackPower =
 
         startStamina = 100f;
@@ -102,6 +105,8 @@ public class PlayerStats : MonoBehaviour
         startHealth = 50f;
         healthMax = 50;
 
+        health = startHealth;
+
         //attackPower = 
 
         startStamina = 140f;
@@ -112,6 +117,8 @@ public class PlayerStats : MonoBehaviour
     {
         startHealth = 200f;
         healthMax = 200;
+
+        health = startHealth;
 
         //attackPower = 
 
