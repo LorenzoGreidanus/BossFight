@@ -24,7 +24,6 @@ public class PlayerMove : MonoBehaviour
     private void Awake()
     {
         charController = GetComponent<CharacterController>();
-        LockState();
     }
 
     private void Update()
@@ -64,10 +63,5 @@ public class PlayerMove : MonoBehaviour
         {
             dash = 1;
         }
-    }
-
-    private void LockState()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
     }
 }
