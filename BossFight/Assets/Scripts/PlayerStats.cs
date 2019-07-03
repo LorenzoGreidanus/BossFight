@@ -11,6 +11,8 @@ public class PlayerStats : MonoBehaviour
     public float startStamina;
     public float staminaDebuff;
 
+    public int maxPotions;
+
     public int attackPower;
 
     public bool staminaPenalty;
@@ -74,7 +76,7 @@ public class PlayerStats : MonoBehaviour
 
     public void Heal()
     {
-        if (Input.GetButtonDown("Interact") && healPots < 3)
+        if (Input.GetButtonDown("Interact") && healPots < maxPotions)
         {
             health += 50f;
 
