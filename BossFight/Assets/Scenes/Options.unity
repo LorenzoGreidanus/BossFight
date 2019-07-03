@@ -813,9 +813,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 0}
+  slider: {fileID: 846461625}
   paused: 0
   unpause: 1
   pause: 0
+  stillChoosing: 0
 --- !u!4 &884620592
 Transform:
   m_ObjectHideFlags: 0
