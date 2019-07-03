@@ -100,7 +100,9 @@ public class PlayerStats : MonoBehaviour
 
         health = startHealth;
 
-        Instantiate(weapons[1], weaponPlaceHolder.position, Quaternion.identity);
+        weapons[1].SetActive(true);
+        weapons[0].SetActive(false);
+        weapons[2].SetActive(false);
 
         //attackPower =
 
@@ -115,7 +117,9 @@ public class PlayerStats : MonoBehaviour
 
         health = startHealth;
 
-        Instantiate(weapons[0], weaponPlaceHolder.position, Quaternion.identity);
+        weapons[0].SetActive(true);
+        weapons[1].SetActive(false);
+        weapons[2].SetActive(false);
 
         //attackPower = 
 
@@ -128,7 +132,9 @@ public class PlayerStats : MonoBehaviour
         startHealth = 200f;
         healthMax = 200;
 
-        Instantiate(weapons[2], weaponPlaceHolder.position, Quaternion.identity);
+        weapons[2].SetActive(true);
+        weapons[1].SetActive(false);
+        weapons[0].SetActive(false);
 
         health = startHealth;
 
