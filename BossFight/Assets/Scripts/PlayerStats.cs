@@ -5,15 +5,18 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
+    public Transform weaponPlaceHolder;
+    public List<GameObject> weapons = new List<GameObject>();
+
     public float health;
     public float startHealth;
     public float stamina;
     public float startStamina;
     public float staminaDebuff;
 
-    public int maxPotions;
+    public bool playerDeath;
 
-    public int attackPower;
+    public int maxPotions;
 
     public bool staminaPenalty;
     public int staminaMax;
@@ -37,6 +40,7 @@ public class PlayerStats : MonoBehaviour
     {
         if (health <= 0)
         {
+            playerDeath = true;
             Destroy(this.gameObject);
         }
         if (stamina != staminaMax && gameObject.GetComponent<PlayerMove>().dashCooldown <= 0)
@@ -96,6 +100,8 @@ public class PlayerStats : MonoBehaviour
 
         health = startHealth;
 
+        Instantiate(weapons[1], weaponPlaceHolder.position, Quaternion.identity);
+
         //attackPower =
 
         startStamina = 100f;
@@ -109,6 +115,8 @@ public class PlayerStats : MonoBehaviour
 
         health = startHealth;
 
+        Instantiate(weapons[0], weaponPlaceHolder.position, Quaternion.identity);
+
         //attackPower = 
 
         startStamina = 140f;
@@ -119,6 +127,8 @@ public class PlayerStats : MonoBehaviour
     {
         startHealth = 200f;
         healthMax = 200;
+
+        Instantiate(weapons[2], weaponPlaceHolder.position, Quaternion.identity);
 
         health = startHealth;
 
