@@ -216,6 +216,8 @@ MonoBehaviour:
   dashStopMultiplier: 9
   movementSpeed: 6
   camShake: {fileID: 4642361812480296853}
+  shakeLenght: 0
+  magnitude: 0
   dashCooldown: 1
   dashStamina: 20
 --- !u!114 &3275194463979295061
@@ -231,11 +233,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  startHealth: 1
   stamina: 100
+  startStamina: 0
   staminaDebuff: 60
+  maxPotions: 0
+  attackPower: 0
   staminaPenalty: 0
   staminaMax: 100
+  staminaRegen: 10
   healthMax: 100
-  healPots: 0
+  healPots: 3
+  healtGain: 0
   healthSlider: {fileID: 0}
   staminaSlider: {fileID: 0}

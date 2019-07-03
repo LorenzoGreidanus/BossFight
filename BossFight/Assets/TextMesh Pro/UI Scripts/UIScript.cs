@@ -9,43 +9,47 @@ public class UIScript : MonoBehaviour
 
     public int paused = 0, unpause = 1;
     public bool pause;
+    public bool stillChoosing;
 
     public void Update()
     {
-        if (Input.GetButtonDown("Cancel"))
+        if (stillChoosing == false)
         {
-            if (pause == false)
+            if (Input.GetButtonDown("Cancel"))
             {
-                PauseMenu();
-            }
-            else
-            {
-                UnPaused();
+                if (pause == false)
+                {
+                    PauseMenu();
+                }
+                else
+                {
+                    UnPaused();
+                }
             }
         }
     }
     public void Play()
     {
         SceneManager.LoadScene(1);
-        FindObjectOfType<AudioManager>().Play("ButtonSound");
+        ButtonSound();
     }
 
     public void Options()
     {
         SceneManager.LoadScene(2);
-        FindObjectOfType<AudioManager>().Play("ButtonSound");
+        ButtonSound();
     }
 
     public void Quit()
     {
         Application.Quit();
-        FindObjectOfType<AudioManager>().Play("ButtonSound");
+        ButtonSound();
     }
 
     public void Back()
     {
         SceneManager.LoadScene(0);
-        FindObjectOfType<AudioManager>().Play("ButtonSound");
+        ButtonSound();
     }
 
     public void Continue()
@@ -53,7 +57,7 @@ public class UIScript : MonoBehaviour
         panel.SetActive(false);
         Time.timeScale = unpause;
         Cursor.lockState = CursorLockMode.Locked;
-        FindObjectOfType<AudioManager>().Play("ButtonSound");
+        ButtonSound();
     }
 
     public void PauseMenu()
@@ -65,7 +69,7 @@ public class UIScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = paused;
         pause = true;
-        FindObjectOfType<AudioManager>().Play("ButtonSound");
+        ButtonSound();
     }
 
     public void UnPaused()
@@ -77,6 +81,10 @@ public class UIScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = unpause;
         pause = false;
+        ButtonSound();
+    }
+    public void ButtonSound()
+    {
         FindObjectOfType<AudioManager>().Play("ButtonSound");
     }
 }
