@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIScript : MonoBehaviour
 {
     public GameObject panel;
+    public GameObject slider;
 
     public int paused = 0, unpause = 1;
     public bool pause;
@@ -38,6 +41,12 @@ public class UIScript : MonoBehaviour
     {
         SceneManager.LoadScene(2);
         ButtonSound();
+    }
+
+    public void Volume()
+    {
+        float volume = FindObjectOfType<AudioManager>().volume;
+        slider.GetComponent<Slider>().value = volume;
     }
 
     public void Quit()
