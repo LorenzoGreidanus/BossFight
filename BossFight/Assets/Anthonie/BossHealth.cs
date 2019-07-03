@@ -33,7 +33,9 @@ public class BossHealth : MonoBehaviour
 
     void Die()
     {
+        Animator animator = transform.GetComponent<Animator>();
 
+        animator.SetBool("Die", true);
     }
 
 }
