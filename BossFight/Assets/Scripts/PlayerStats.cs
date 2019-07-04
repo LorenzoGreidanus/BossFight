@@ -14,6 +14,8 @@ public class PlayerStats : MonoBehaviour
     public float startStamina;
     public float staminaDebuff;
 
+    public int attackPower;
+
     public bool playerDeath;
 
     public int maxPotions;
@@ -104,7 +106,7 @@ public class PlayerStats : MonoBehaviour
         weapons[0].SetActive(false);
         weapons[2].SetActive(false);
 
-        //attackPower =
+        attackPower = 50;
 
         startStamina = 100f;
         staminaMax = 100;
@@ -121,7 +123,7 @@ public class PlayerStats : MonoBehaviour
         weapons[1].SetActive(false);
         weapons[2].SetActive(false);
 
-        //attackPower = 
+        attackPower = 90;
 
         startStamina = 140f;
         staminaMax = 140;
@@ -138,7 +140,7 @@ public class PlayerStats : MonoBehaviour
 
         health = startHealth;
 
-        //attackPower = 
+        attackPower = 30;
 
         startStamina = 50f;
         staminaMax = 50;
