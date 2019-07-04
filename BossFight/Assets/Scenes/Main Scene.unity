@@ -348,16 +348,6 @@ PrefabInstance:
       propertyPath: staminaSlider
       value: 
       objectReference: {fileID: 453742607}
-    - target: {fileID: 3275194463979295061, guid: 1c014663ca3733c49adc7a5501e2b512,
-        type: 3}
-      propertyPath: maxPotions
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4576946172123761305, guid: 1c014663ca3733c49adc7a5501e2b512,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a70a2215a88b9074e99a2603c828d221, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c014663ca3733c49adc7a5501e2b512, type: 3}
 --- !u!1 &77294762 stripped
