@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - BossTrigger
+  - BossHealthbar
+  - UIManager
+  - AudioManager
   layers:
   - Default
   - TransparentFX

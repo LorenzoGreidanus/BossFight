@@ -5,14 +5,22 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
+    public Transform weaponPlaceHolder;
+    public List<GameObject> weapons = new List<GameObject>();
+
     public float health;
+    public float startHealth;
     public float stamina;
+    public float startStamina;
     public float staminaDebuff;
 
-    public int attackPower;
+    public bool playerDeath;
+
+    public int maxPotions;
 
     public bool staminaPenalty;
     public int staminaMax;
+    [SerializeField]private int staminaRegen;
 
     public int healthMax;
     public int healPots;
@@ -24,12 +32,15 @@ public class PlayerStats : MonoBehaviour
     private void Awake()
     {
         staminaPenalty = false;
+        health = startHealth;
+        stamina = startStamina;
     }
     
     public void Update()
     {
         if (health <= 0)
         {
+            playerDeath = true;
             Destroy(this.gameObject);
         }
         if (stamina != staminaMax && gameObject.GetComponent<PlayerMove>().dashCooldown <= 0)
@@ -49,8 +60,8 @@ public class PlayerStats : MonoBehaviour
             Heal();
         }
 
-        healthSlider.fillAmount = health / 100f;
-        staminaSlider.fillAmount = stamina / 100f;
+        healthSlider.fillAmount = health / startHealth;
+        staminaSlider.fillAmount = stamina / startStamina;
     }
 
     public void Damage(float damage)
@@ -60,7 +71,7 @@ public class PlayerStats : MonoBehaviour
 
     public void StaminaRegen()
     {
-        stamina += 10 * Time.deltaTime;
+        stamina += staminaRegen * Time.deltaTime;
         if (stamina > staminaMax)
         {
             stamina = staminaMax;
@@ -69,7 +80,7 @@ public class PlayerStats : MonoBehaviour
 
     public void Heal()
     {
-        if (Input.GetButtonDown("Interact") && healPots < 3)
+        if (Input.GetButtonDown("Interact") && healPots < maxPotions)
         {
             health += 50f;
 
@@ -84,34 +95,52 @@ public class PlayerStats : MonoBehaviour
 
     public void Knight()
     {
-        health = 100f;
+        startHealth = 100f;
         healthMax = 100;
+
+        health = startHealth;
+
+        weapons[1].SetActive(true);
+        weapons[0].SetActive(false);
+        weapons[2].SetActive(false);
 
         //attackPower =
 
-        stamina = 100f;
+        startStamina = 100f;
         staminaMax = 100;
     }
 
     public void Beserker()
     {
-        health = 50f;
+        startHealth = 50f;
         healthMax = 50;
+
+        health = startHealth;
+
+        weapons[0].SetActive(true);
+        weapons[1].SetActive(false);
+        weapons[2].SetActive(false);
 
         //attackPower = 
 
-        stamina = 140f;
+        startStamina = 140f;
         staminaMax = 140;
     }
 
     public void Paladin()
     {
-        health = 200f;
+        startHealth = 200f;
         healthMax = 200;
+
+        weapons[2].SetActive(true);
+        weapons[1].SetActive(false);
+        weapons[0].SetActive(false);
+
+        health = startHealth;
 
         //attackPower = 
 
-        stamina = 50f;
+        startStamina = 50f;
         staminaMax = 50;
     }
 }
