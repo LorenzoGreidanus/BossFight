@@ -40,6 +40,7 @@ public class UIScript : MonoBehaviour
     public void Options()
     {
         SceneManager.LoadScene(2);
+        MusicOn();
         ButtonSound();
     }
 
@@ -59,7 +60,7 @@ public class UIScript : MonoBehaviour
     public void Back()
     {
         SceneManager.LoadScene(0);
-        FindObjectOfType<AudioManager>().SoundControls();
+        MusicOn();
         ButtonSound();
     }
 
@@ -97,5 +98,11 @@ public class UIScript : MonoBehaviour
     public void ButtonSound()
     {
         FindObjectOfType<AudioManager>().Play("ButtonSound");
+    }
+
+    public void MusicOn()
+    {
+        FindObjectOfType<AudioManager>().sounds[1].mute = false;
+        FindObjectOfType<AudioManager>().SoundControls();
     }
 }
