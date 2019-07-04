@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class UIScript : MonoBehaviour
 {
     public GameObject panel;
-    public GameObject slider;
+    public AudioMixer audioBitch;
 
     public int paused = 0, unpause = 1;
     public bool pause;
@@ -43,10 +43,11 @@ public class UIScript : MonoBehaviour
         ButtonSound();
     }
 
-    public void Volume()
+    public void SetVolume(float volume)
     {
-        float volume = FindObjectOfType<AudioManager>().volume;
-        slider.GetComponent<Slider>().value = volume;
+        Debug.Log(volume);
+        audioBitch.SetFloat("VolumeSlider", volume);
+
     }
 
     public void Quit()
