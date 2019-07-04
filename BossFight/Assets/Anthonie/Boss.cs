@@ -20,7 +20,8 @@ public class Boss : MonoBehaviour
     public bool slashAttack;
     public float attackCooldownReset;
     float attackCooldown;
-
+    public float walkCooldownReset;
+    float walkCooldown;
 
     void Start()
     {
@@ -34,6 +35,7 @@ public class Boss : MonoBehaviour
         animator.SetBool("TurnAttack", false);
 
         attackCooldown -= Time.deltaTime;
+        walkCooldown -= Time.deltaTime;
         if (standing)
         {
             if(attackCooldown <= 0)
@@ -45,7 +47,7 @@ public class Boss : MonoBehaviour
                 RandomAttack();
 
             }
-            else
+            else if(walkCooldown <= 0)
             {
                 WalkTowards();
                 RotateTowards();
@@ -108,6 +110,7 @@ public class Boss : MonoBehaviour
         if(attackCooldown <= 0)
         {
             attackCooldown = attackCooldownReset;
+            walkCooldown = walkCooldownReset;
             if (slashAttack)
             {
                 SlashAttack();
