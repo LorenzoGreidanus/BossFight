@@ -37,6 +37,5 @@ public class ClassesSelect : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         FindObjectOfType<AudioManager>().sounds[1].mute = true;
         FindObjectOfType<AudioManager>().SoundControls();
-        FindObjectOfType<AudioManager>().started = false;
     }
 }
