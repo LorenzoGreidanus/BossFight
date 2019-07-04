@@ -15,6 +15,11 @@ public class Boss : MonoBehaviour
     int randomInt;
     bool turnAttacking;
     public Vector3 walkDirection;
+    public int amoundOfAttacks;
+    public bool standing;
+    public bool slashAttack;
+    public float attackCooldownReset;
+    float attackCooldown;
 
 
     void Start()
@@ -24,12 +29,29 @@ public class Boss : MonoBehaviour
 
     void Update()
     {
-        Attack();
-        if (!attacking)
+        Animator animator = transform.GetComponent<Animator>();
+        animator.SetBool("SlashAttack", false);
+        animator.SetBool("TurnAttack", false);
+
+        attackCooldown -= Time.deltaTime;
+        if (standing)
         {
-            RotateTowards();
-            WalkTowards();
+            if(attackCooldown <= 0)
+            {
+                attacking = false;
+            }
+            if (attacking)
+            {
+                RandomAttack();
+
+            }
+            else
+            {
+                WalkTowards();
+                RotateTowards();
+            }
         }
+        
 
     }
 
@@ -42,55 +64,72 @@ public class Boss : MonoBehaviour
 
     void WalkTowards()
     {
-        if (Physics.Raycast(transform.position, transform.forward, out ray, attackRange))
+        Vector3 pos = transform.position;
+        if (Physics.Raycast(new Vector3(pos.x, pos.y - 1.2f, pos.z), transform.forward, out ray, attackRange))
         {
             if (ray.transform.tag == "Player")
             {
                 attacking = true;
                 RandomAttack();
+                Animator animator = transform.GetComponent<Animator>();
+
+                animator.SetBool("Walking", false);
             }
             else
             {
                 transform.Translate(walkDirection * movementSpeed * Time.deltaTime);
+                Animator animator = transform.GetComponent<Animator>();
+
+                animator.SetBool("Walking", true);
             }
         }
         else
         {
             transform.Translate(walkDirection * movementSpeed * Time.deltaTime);
+            Animator animator = transform.GetComponent<Animator>();
+
+            animator.SetBool("Walking", true);
         }
     }
 
     void RandomAttack()
     {
-        randomInt = Random.Range(1, 1);
+        randomInt = Random.Range(1, amoundOfAttacks);
         if (randomInt == 1)
         {
-            turnTime = turnTimeReset;
-
-            turnAttacking = true;
+            slashAttack = true;
         }
-        attacking = true;
+        Attack();
 
     }
 
     void Attack()
     {
-        if (turnAttacking)
+        if(attackCooldown <= 0)
         {
-            turnTime -= Time.deltaTime;
-            if (turnTime < 0)
+            attackCooldown = attackCooldownReset;
+            if (slashAttack)
             {
-                turnAttacking = false;
-                attacking = false;
-            }
-            TurnAttack();
+                SlashAttack();
 
+            }
         }
+        
     }
 
     void TurnAttack()
     {
-        transform.Rotate(new Vector3(0, 1, 0) * rotateSpeed * Time.deltaTime);
+        Animator animator = transform.GetComponent<Animator>();
+
+        animator.SetBool("TurnAttack", true);
+        turnAttacking = false;
+    }
+
+    void SlashAttack()
+    {
+        Animator animator = transform.GetComponent<Animator>();
+
+        animator.SetBool("SlashAttack", true);
     }
 }
 

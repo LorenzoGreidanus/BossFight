@@ -14,6 +14,7 @@ public class BossTrigger : MonoBehaviour
             Animator animator = boss.transform.GetComponent<Animator>();
 
             animator.SetBool("Stand", true);
+            boss.GetComponent<Boss>().standing = true;
         }
     }
 }
