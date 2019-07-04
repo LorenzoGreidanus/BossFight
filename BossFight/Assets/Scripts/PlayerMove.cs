@@ -43,7 +43,10 @@ public class PlayerMove : MonoBehaviour
         Vector3 forwardMovement = transform.forward * verInput;
         Vector3 rightMovement = transform.right * horInput;
 
-        charController.SimpleMove(forwardMovement + rightMovement);
+        if (charController.SimpleMove(forwardMovement + rightMovement))
+        {
+            FindObjectOfType<AudioManager>().Play("Player Footsteps");
+        }
     }
 
     private void Dash()
