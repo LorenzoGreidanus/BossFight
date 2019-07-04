@@ -1197,6 +1197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daa14143130191646b4abad00ea8d98d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 4
+  youDied: {fileID: 0}
   panel: {fileID: 0}
   audioBitch: {fileID: 24100000, guid: e2a4c07e88304c04f912c4349c68b4f0, type: 2}
   paused: 0

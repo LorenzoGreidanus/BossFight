@@ -70,9 +70,10 @@ public class PlayerMove : MonoBehaviour
 
     public void Attack()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && gameObject.GetComponent<PlayerStats>().stamina != 0 && gameObject.GetComponent<PlayerStats>().staminaPenalty == false)
         {
             animator.SetBool("Attacking", true);
+            gameObject.GetComponent<PlayerStats>().stamina -= dashStamina/2;
         }
         else
         {

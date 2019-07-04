@@ -348,16 +348,6 @@ PrefabInstance:
       propertyPath: staminaSlider
       value: 
       objectReference: {fileID: 453742607}
-    - target: {fileID: 3275194463979295061, guid: 1c014663ca3733c49adc7a5501e2b512,
-        type: 3}
-      propertyPath: maxPotions
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4576946172123761305, guid: 1c014663ca3733c49adc7a5501e2b512,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a70a2215a88b9074e99a2603c828d221, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c014663ca3733c49adc7a5501e2b512, type: 3}
 --- !u!1 &77294762 stripped
@@ -1749,6 +1739,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daa14143130191646b4abad00ea8d98d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 4
+  youDied: {fileID: 1392171549}
   panel: {fileID: 1621344176}
   audioBitch: {fileID: 0}
   paused: 0
@@ -2967,6 +2959,12 @@ PrefabInstance:
 --- !u!224 &1392171548 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4411029742318551964, guid: 7e037e07dbbc13042a5f20849ff2c8f5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1392171547}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1392171549 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7354487022554389871, guid: 7e037e07dbbc13042a5f20849ff2c8f5,
     type: 3}
   m_PrefabInstance: {fileID: 1392171547}
   m_PrefabAsset: {fileID: 0}

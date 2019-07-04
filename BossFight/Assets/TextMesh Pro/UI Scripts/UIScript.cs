@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class UIScript : MonoBehaviour
 {
+    public float time;
+    public GameObject youDied;
+
     public GameObject panel;
     public AudioMixer audioBitch;
 
@@ -16,6 +19,7 @@ public class UIScript : MonoBehaviour
 
     public void Update()
     {
+        YouDied();
         if (stillChoosing == false)
         {
             if (Input.GetButtonDown("Cancel"))
@@ -104,5 +108,20 @@ public class UIScript : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().sounds[1].mute = false;
         FindObjectOfType<AudioManager>().SoundControls();
+    }
+
+    public void YouDied()
+    {
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().playerDeath == true)
+        {
+            time -= Time.deltaTime;
+
+            youDied.SetActive(true);
+
+            if (time < 0)
+            {
+                SceneManager.LoadScene(1);
+            }
+        }
     }
 }

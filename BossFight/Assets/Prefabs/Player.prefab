@@ -3282,7 +3282,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8402009595722578248, guid: 1dc0ad9d0556cfd4585d14dd4f7277b1, type: 3}
+  - {fileID: 2100000, guid: a70a2215a88b9074e99a2603c828d221, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3907,8 +3907,8 @@ MonoBehaviour:
   movementSpeed: 6
   animator: {fileID: 1608054062877222910}
   camShake: {fileID: 4642361812480296853}
-  shakeLenght: 0
-  magnitude: 0
+  shakeLenght: 0.4
+  magnitude: 0.05
   dashCooldown: 1
   dashStamina: 20
 --- !u!114 &3275194463979295061
@@ -3935,7 +3935,7 @@ MonoBehaviour:
   staminaDebuff: 20
   attackPower: 0
   playerDeath: 0
-  maxPotions: 0
+  maxPotions: 3
   staminaPenalty: 0
   staminaMax: 100
   staminaRegen: 10
