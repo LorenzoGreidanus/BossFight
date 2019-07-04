@@ -59,6 +59,7 @@ public class UIScript : MonoBehaviour
     public void Back()
     {
         SceneManager.LoadScene(0);
+        FindObjectOfType<AudioManager>().SoundControls();
         ButtonSound();
     }
 
