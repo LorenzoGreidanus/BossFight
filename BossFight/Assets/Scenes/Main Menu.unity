@@ -183,14 +183,18 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    mute: 0
+    audioMixer: {fileID: 24300002, guid: e2a4c07e88304c04f912c4349c68b4f0, type: 2}
     source: {fileID: 0}
   - name: BackGround
     clip: {fileID: 8300000, guid: 7a94b94e967c33241b50c7b446bca12f, type: 3}
     volume: 1
     pitch: 1
     loop: 1
+    mute: 0
+    audioMixer: {fileID: 24300002, guid: e2a4c07e88304c04f912c4349c68b4f0, type: 2}
     source: {fileID: 0}
-  volume: 0
+  started: 0
 --- !u!1 &127524416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1194,6 +1198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 0}
+  audioBitch: {fileID: 24100000, guid: e2a4c07e88304c04f912c4349c68b4f0, type: 2}
   paused: 0
   unpause: 1
   pause: 0

@@ -14,6 +14,8 @@ public class PlayerStats : MonoBehaviour
     public float startStamina;
     public float staminaDebuff;
 
+    public int attackPower;
+
     public bool playerDeath;
 
     public int maxPotions;
@@ -98,16 +100,19 @@ public class PlayerStats : MonoBehaviour
         startHealth = 100f;
         healthMax = 100;
 
-        health = startHealth;
-
         weapons[1].SetActive(true);
         weapons[0].SetActive(false);
         weapons[2].SetActive(false);
 
-        //attackPower =
+        attackPower = 50;
 
         startStamina = 100f;
         staminaMax = 100;
+
+        health = startHealth;
+        stamina = startStamina;
+
+        staminaDebuff = 40;
     }
 
     public void Beserker()
@@ -115,16 +120,19 @@ public class PlayerStats : MonoBehaviour
         startHealth = 50f;
         healthMax = 50;
 
-        health = startHealth;
-
         weapons[0].SetActive(true);
         weapons[1].SetActive(false);
         weapons[2].SetActive(false);
 
-        //attackPower = 
+        attackPower = 90;
 
         startStamina = 140f;
         staminaMax = 140;
+
+        health = startHealth;
+        stamina = startStamina;
+
+        staminaDebuff = 60;
     }
 
     public void Paladin()
@@ -136,11 +144,14 @@ public class PlayerStats : MonoBehaviour
         weapons[1].SetActive(false);
         weapons[0].SetActive(false);
 
-        health = startHealth;
-
-        //attackPower = 
+        attackPower = 30;
 
         startStamina = 50f;
         staminaMax = 50;
+
+        health = startHealth;
+        stamina = startStamina;
+
+        staminaDebuff = 20;
     }
 }

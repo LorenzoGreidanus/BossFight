@@ -5,7 +5,7 @@ using System;
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
-    public float volume;
+    public bool started;
 
     public static AudioManager instance;
 
@@ -23,16 +23,8 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        foreach (Sound s in sounds)
-        {
-            s.source = gameObject.AddComponent<AudioSource>();
-            s.source.clip = s.clip;
-
-            s.source.volume = s.volume;
-            volume = s.volume;
-            s.source.pitch = s.pitch;
-            s.source.loop = s.loop;
-        }
+        SoundControls();
+        started = true;
     }
 
     public void Play(string name)
@@ -45,4 +37,24 @@ public class AudioManager : MonoBehaviour
         }
         s.source.Play();
     }
+
+    public void SoundControls()
+    {
+        foreach (Sound s in sounds)
+        {
+            if (started == false)
+            {
+                s.source = gameObject.AddComponent<AudioSource>();
+                s.source.clip = s.clip;
+                s.source.outputAudioMixerGroup = s.audioMixer;
+            }
+
+            s.source.volume = s.volume;
+            s.source.pitch = s.pitch;
+            s.source.loop = s.loop;
+            s.source.mute = s.mute;
+        }
+    }
+
+
 }

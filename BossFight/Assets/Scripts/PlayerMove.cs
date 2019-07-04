@@ -30,6 +30,7 @@ public class PlayerMove : MonoBehaviour
     {
         PlayerMovement();
         Dash();
+        Attack();
     }
 
     private void PlayerMovement()
@@ -62,6 +63,20 @@ public class PlayerMove : MonoBehaviour
         else
         {
             dash = 1;
+        }
+    }
+
+    public void Attack()
+    {
+        if (Input.GetButtonDown("Fire 1"))
+        {
+            Animator animator = transform.GetComponent<Animator>();
+            animator.SetBool("Attacking", true);
+        }
+        else
+        {
+            Animator animator = transform.GetComponent<Animator>();
+            animator.SetBool("Attacking", false);
         }
     }
 }
