@@ -348,16 +348,6 @@ PrefabInstance:
       propertyPath: staminaSlider
       value: 
       objectReference: {fileID: 453742607}
-    - target: {fileID: 4799604717612695964, guid: 1c014663ca3733c49adc7a5501e2b512,
-        type: 3}
-      propertyPath: dashSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4799604717612695964, guid: 1c014663ca3733c49adc7a5501e2b512,
-        type: 3}
-      propertyPath: dashStopMultiplier
-      value: 20
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c014663ca3733c49adc7a5501e2b512, type: 3}
 --- !u!1 &77294762 stripped

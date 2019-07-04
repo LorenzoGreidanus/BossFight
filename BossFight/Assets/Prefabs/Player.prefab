@@ -2668,7 +2668,7 @@ Animator:
   m_GameObject: {fileID: 5656994743338006679}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 1dc0ad9d0556cfd4585d14dd4f7277b1, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2982b674326092a4f98c36bee9111246, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3905,6 +3905,7 @@ MonoBehaviour:
   maxDashCooldown: 1
   dashStopMultiplier: 20
   movementSpeed: 6
+  animator: {fileID: 1608054062877222910}
   camShake: {fileID: 4642361812480296853}
   shakeLenght: 0
   magnitude: 0

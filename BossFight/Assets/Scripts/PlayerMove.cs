@@ -12,6 +12,8 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float dashStopMultiplier;
     [SerializeField] private float movementSpeed;
 
+    public Animator animator;
+
     public CamShake camShake;
     public float shakeLenght;
     public float magnitude;
@@ -68,14 +70,12 @@ public class PlayerMove : MonoBehaviour
 
     public void Attack()
     {
-        if (Input.GetButtonDown("Fire 1"))
+        if (Input.GetButtonDown("Fire1"))
         {
-            Animator animator = transform.GetComponent<Animator>();
             animator.SetBool("Attacking", true);
         }
         else
         {
-            Animator animator = transform.GetComponent<Animator>();
             animator.SetBool("Attacking", false);
         }
     }
