@@ -100,8 +100,6 @@ public class PlayerStats : MonoBehaviour
         startHealth = 100f;
         healthMax = 100;
 
-        health = startHealth;
-
         weapons[1].SetActive(true);
         weapons[0].SetActive(false);
         weapons[2].SetActive(false);
@@ -110,14 +108,17 @@ public class PlayerStats : MonoBehaviour
 
         startStamina = 100f;
         staminaMax = 100;
+
+        health = startHealth;
+        stamina = startStamina;
+
+        staminaDebuff = 40;
     }
 
     public void Beserker()
     {
         startHealth = 50f;
         healthMax = 50;
-
-        health = startHealth;
 
         weapons[0].SetActive(true);
         weapons[1].SetActive(false);
@@ -127,6 +128,11 @@ public class PlayerStats : MonoBehaviour
 
         startStamina = 140f;
         staminaMax = 140;
+
+        health = startHealth;
+        stamina = startStamina;
+
+        staminaDebuff = 60;
     }
 
     public void Paladin()
@@ -138,11 +144,14 @@ public class PlayerStats : MonoBehaviour
         weapons[1].SetActive(false);
         weapons[0].SetActive(false);
 
-        health = startHealth;
-
         attackPower = 30;
 
         startStamina = 50f;
         staminaMax = 50;
+
+        health = startHealth;
+        stamina = startStamina;
+
+        staminaDebuff = 20;
     }
 }

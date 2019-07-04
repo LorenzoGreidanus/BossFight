@@ -296,7 +296,7 @@ PrefabInstance:
     - target: {fileID: 6770814927745300664, guid: 1c014663ca3733c49adc7a5501e2b512,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.2480316
+      value: -5.211
       objectReference: {fileID: 0}
     - target: {fileID: 6770814927745300664, guid: 1c014663ca3733c49adc7a5501e2b512,
         type: 3}
@@ -348,6 +348,16 @@ PrefabInstance:
       propertyPath: staminaSlider
       value: 
       objectReference: {fileID: 453742607}
+    - target: {fileID: 4799604717612695964, guid: 1c014663ca3733c49adc7a5501e2b512,
+        type: 3}
+      propertyPath: dashSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4799604717612695964, guid: 1c014663ca3733c49adc7a5501e2b512,
+        type: 3}
+      propertyPath: dashStopMultiplier
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c014663ca3733c49adc7a5501e2b512, type: 3}
 --- !u!1 &77294762 stripped
@@ -1740,7 +1750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 1621344176}
-  slider: {fileID: 0}
+  audioBitch: {fileID: 0}
   paused: 0
   unpause: 1
   pause: 0
