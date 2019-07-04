@@ -1749,6 +1749,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daa14143130191646b4abad00ea8d98d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 4
+  youDied: {fileID: 1392171549}
   panel: {fileID: 1621344176}
   audioBitch: {fileID: 0}
   paused: 0
@@ -2967,6 +2969,12 @@ PrefabInstance:
 --- !u!224 &1392171548 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4411029742318551964, guid: 7e037e07dbbc13042a5f20849ff2c8f5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1392171547}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1392171549 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7354487022554389871, guid: 7e037e07dbbc13042a5f20849ff2c8f5,
     type: 3}
   m_PrefabInstance: {fileID: 1392171547}
   m_PrefabAsset: {fileID: 0}
