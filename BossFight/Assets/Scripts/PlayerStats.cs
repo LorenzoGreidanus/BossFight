@@ -124,6 +124,8 @@ public class PlayerStats : MonoBehaviour
         weapons[1].SetActive(false);
         weapons[2].SetActive(false);
 
+        print("Hoi");
+
         attackPower = 90;
 
         startStamina = 140f;
