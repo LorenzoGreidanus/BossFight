@@ -15,15 +15,16 @@ public class BossWeapon : MonoBehaviour
         velocity = position - transform.position;
         position = transform.position;
 
-        DamageManager();
+        print("aaaa");
         
     }
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
         if(collision.transform.tag == "Player")
         {
             DamageManager();
             collision.transform.GetComponent<PlayerStats>().Damage(damage);
+            print("AAA");
         }
     }
 
