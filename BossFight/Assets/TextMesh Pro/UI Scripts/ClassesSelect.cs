@@ -36,6 +36,8 @@ public class ClassesSelect : MonoBehaviour
         thisPanel.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         FindObjectOfType<AudioManager>().sounds[1].mute = true;
+        FindObjectOfType<AudioManager>().sounds[2].mute = false;
         FindObjectOfType<AudioManager>().SoundControls();
+        FindObjectOfType<AudioManager>().Play("BossMusic");
     }
 }
