@@ -194,12 +194,20 @@ MonoBehaviour:
     mute: 0
     audioMixer: {fileID: 24300002, guid: e2a4c07e88304c04f912c4349c68b4f0, type: 2}
     source: {fileID: 0}
-  - name: Player Footsteps
-    clip: {fileID: 8300000, guid: 9330bc0444400324084f2fd5de27e1b7, type: 3}
+  - name: BossMusic
+    clip: {fileID: 8300000, guid: 434e9ee7cb3855944b4491535a00d59b, type: 3}
     volume: 1
     pitch: 1
     loop: 1
-    mute: 0
+    mute: 1
+    audioMixer: {fileID: 24300002, guid: e2a4c07e88304c04f912c4349c68b4f0, type: 2}
+    source: {fileID: 0}
+  - name: Player Footsteps
+    clip: {fileID: 8300000, guid: 9330bc0444400324084f2fd5de27e1b7, type: 3}
+    volume: 0
+    pitch: 1
+    loop: 0
+    mute: 1
     audioMixer: {fileID: 24300002, guid: e2a4c07e88304c04f912c4349c68b4f0, type: 2}
     source: {fileID: 0}
   started: 0
